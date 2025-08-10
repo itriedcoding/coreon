@@ -19,7 +19,7 @@
     "modular",
     "reusable"
   ],
-  "author": "Your Name",
+  "author": "itriedcoding",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
