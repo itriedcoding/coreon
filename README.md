@@ -31,7 +31,7 @@ Coreon.js is an advanced JavaScript framework designed for building modern web a
 To install Coreon.js, you can use npm:
 
 ```bash
-npm install coreon.js
+npm i @honeyjsadmin/coreon
 ```
 
 ## Getting Started
@@ -114,5 +114,3 @@ Contributions are welcome! Please submit a pull request or open an issue for any
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
-## To use 
-`` npm i @honeyjsadmin/coreon``
