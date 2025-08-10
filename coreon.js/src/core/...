@@ -1,0 +1,26 @@
+// Coreon.js - Main entry point for the Coreon framework
+
+import EventBus from './eventBus';
+import StateManager from './stateManager';
+import Router from './router';
+import Component from './component';
+import PluginManager from './pluginManager';
+import DependencyInjector from './dependencyInjector';
+import ErrorHandler from './errorHandler';
+import Logger from './logger';
+
+// Initialize core functionalities
+const coreon = {
+    eventBus: new EventBus(),
+    stateManager: new StateManager(),
+    router: new Router(),
+    component: Component,
+    pluginManager: new PluginManager(),
+    dependencyInjector: new DependencyInjector(),
+    errorHandler: new ErrorHandler(),
+    logger: new Logger(),
+};
+
+// Export essential modules
+export default coreon;
+export { EventBus, StateManager, Router, Component, PluginManager, DependencyInjector, ErrorHandler, Logger };

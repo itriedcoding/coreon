@@ -1,0 +1,21 @@
+File path: /coreon.js/src/hooks/useState.js
+
+File contents:
+
+const { useEffect, useRef } = require('react');
+
+function useState(initialValue) {
+    const state = useRef(initialValue);
+    const setState = (newValue) => {
+        state.current = newValue;
+        // Trigger re-render logic here if needed
+    };
+
+    useEffect(() => {
+        // Logic to handle side effects when state changes
+    }, [state.current]);
+
+    return [state.current, setState];
+}
+
+module.exports = useState;

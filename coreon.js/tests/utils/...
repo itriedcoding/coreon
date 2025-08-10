@@ -1,0 +1,75 @@
+Here are the contents for the file: /coreon.js/tests/utils/utils.test.js
+
+import { debounce, throttle, deepClone, uuid, validator, formatter, parser, storage } from '../../src/utils';
+
+describe('Utils Tests', () => {
+    test('debounce should limit function execution', () => {
+        jest.useFakeTimers();
+        const callback = jest.fn();
+        const debounced = debounce(callback, 100);
+        
+        debounced();
+        debounced();
+        debounced();
+        
+        expect(callback).not.toBeCalled();
+        
+        jest.advanceTimersByTime(100);
+        expect(callback).toBeCalledTimes(1);
+    });
+
+    test('throttle should limit function execution frequency', () => {
+        jest.useFakeTimers();
+        const callback = jest.fn();
+        const throttled = throttle(callback, 100);
+        
+        throttled();
+        throttled();
+        throttled();
+        
+        expect(callback).toBeCalledTimes(1);
+        
+        jest.advanceTimersByTime(100);
+        throttled();
+        expect(callback).toBeCalledTimes(2);
+    });
+
+    test('deepClone should create a deep copy of an object', () => {
+        const obj = { a: 1, b: { c: 2 } };
+        const cloned = deepClone(obj);
+        cloned.b.c = 3;
+        
+        expect(obj.b.c).toBe(2);
+        expect(cloned.b.c).toBe(3);
+    });
+
+    test('uuid should generate a unique identifier', () => {
+        const id1 = uuid();
+        const id2 = uuid();
+        
+        expect(id1).not.toBe(id2);
+        expect(id1).toMatch(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
+    });
+
+    test('validator should validate email correctly', () => {
+        expect(validator.isEmail('test@example.com')).toBe(true);
+        expect(validator.isEmail('invalid-email')).toBe(false);
+    });
+
+    test('formatter should format date correctly', () => {
+        const date = new Date('2023-01-01T00:00:00Z');
+        expect(formatter.formatDate(date)).toBe('January 1, 2023');
+    });
+
+    test('parser should parse JSON correctly', () => {
+        const jsonString = '{"key": "value"}';
+        expect(parser.parseJSON(jsonString)).toEqual({ key: 'value' });
+    });
+
+    test('storage should set and get items correctly', () => {
+        storage.setItem('testKey', 'testValue');
+        expect(storage.getItem('testKey')).toBe('testValue');
+        storage.removeItem('testKey');
+        expect(storage.getItem('testKey')).toBeNull();
+    });
+});

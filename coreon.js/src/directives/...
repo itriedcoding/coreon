@@ -1,0 +1,42 @@
+File path: /coreon.js/src/directives/vIf.js
+
+File contents:
+class VIf {
+    constructor(condition, template) {
+        this.condition = condition;
+        this.template = template;
+        this.isVisible = false;
+    }
+
+    render() {
+        if (this.condition()) {
+            if (!this.isVisible) {
+                this.isVisible = true;
+                this.mount();
+            }
+        } else {
+            if (this.isVisible) {
+                this.isVisible = false;
+                this.unmount();
+            }
+        }
+    }
+
+    mount() {
+        // Logic to mount the template to the DOM
+        const element = document.createElement('div');
+        element.innerHTML = this.template;
+        document.body.appendChild(element);
+        this.element = element;
+    }
+
+    unmount() {
+        // Logic to unmount the template from the DOM
+        if (this.element) {
+            document.body.removeChild(this.element);
+            this.element = null;
+        }
+    }
+}
+
+export default VIf;

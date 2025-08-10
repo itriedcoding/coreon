@@ -1,0 +1,26 @@
+// Default theme configuration for Coreon.js framework
+const defaultTheme = {
+    colors: {
+        primary: '#3498db',
+        secondary: '#2ecc71',
+        background: '#ffffff',
+        text: '#333333',
+        border: '#dddddd',
+    },
+    fonts: {
+        body: 'Arial, sans-serif',
+        heading: 'Helvetica, sans-serif',
+    },
+    spacing: {
+        small: '8px',
+        medium: '16px',
+        large: '24px',
+    },
+    breakpoints: {
+        mobile: '480px',
+        tablet: '768px',
+        desktop: '1024px',
+    },
+};
+
+export default defaultTheme;

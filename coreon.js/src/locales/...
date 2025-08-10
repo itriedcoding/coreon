@@ -1,0 +1,21 @@
+// This file contains English translations for the application.
+
+const translations = {
+    welcome: "Welcome to Coreon.js",
+    goodbye: "Goodbye!",
+    error: {
+        notFound: "Page not found",
+        serverError: "Internal server error",
+    },
+    buttons: {
+        submit: "Submit",
+        cancel: "Cancel",
+    },
+    messages: {
+        loading: "Loading...",
+        success: "Operation completed successfully!",
+        failure: "Operation failed. Please try again.",
+    },
+};
+
+export default translations;

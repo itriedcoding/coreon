@@ -1,0 +1,35 @@
+File path: /coreon.js/src/mixins/draggable.js
+
+File contents:
+class Draggable {
+    constructor(element) {
+        this.element = element;
+        this.init();
+    }
+
+    init() {
+        this.element.addEventListener('mousedown', this.onMouseDown.bind(this));
+    }
+
+    onMouseDown(event) {
+        event.preventDefault();
+        this.offsetX = event.clientX - this.element.getBoundingClientRect().left;
+        this.offsetY = event.clientY - this.element.getBoundingClientRect().top;
+
+        document.addEventListener('mousemove', this.onMouseMove.bind(this));
+        document.addEventListener('mouseup', this.onMouseUp.bind(this));
+    }
+
+    onMouseMove(event) {
+        const x = event.clientX - this.offsetX;
+        const y = event.clientY - this.offsetY;
+        this.element.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    onMouseUp() {
+        document.removeEventListener('mousemove', this.onMouseMove.bind(this));
+        document.removeEventListener('mouseup', this.onMouseUp.bind(this));
+    }
+}
+
+export default Draggable;

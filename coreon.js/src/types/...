@@ -1,0 +1,73 @@
+The file /coreon.js/src/types/index.d.ts will contain TypeScript type definitions for the Coreon.js framework. Here are the contents for that file:
+
+// Coreon.js Type Definitions
+
+declare module 'coreon' {
+  export interface ComponentProps {
+    [key: string]: any;
+  }
+
+  export interface Component {
+    props: ComponentProps;
+    state: any;
+    mounted(): void;
+    updated(): void;
+    unmounted(): void;
+  }
+
+  export interface EventBus {
+    on(event: string, callback: Function): void;
+    off(event: string, callback: Function): void;
+    emit(event: string, data?: any): void;
+  }
+
+  export interface StateManager {
+    getState(): any;
+    setState(newState: any): void;
+    subscribe(callback: Function): void;
+  }
+
+  export interface Router {
+    navigate(path: string): void;
+    getCurrentPath(): string;
+  }
+
+  export interface Plugin {
+    install(coreon: any): void;
+  }
+
+  export interface Logger {
+    log(message: string): void;
+    error(message: string): void;
+    warn(message: string): void;
+  }
+
+  export interface ApiService {
+    get(url: string, params?: any): Promise<any>;
+    post(url: string, data: any): Promise<any>;
+  }
+
+  export interface AuthService {
+    login(credentials: any): Promise<any>;
+    logout(): Promise<void>;
+    isAuthenticated(): boolean;
+  }
+
+  export interface CacheService {
+    get(key: string): any;
+    set(key: string, value: any): void;
+    clear(): void;
+  }
+
+  export interface NotificationService {
+    notify(message: string): void;
+  }
+
+  export interface Theme {
+    [key: string]: any;
+  }
+
+  export interface Locale {
+    [key: string]: string;
+  }
+}

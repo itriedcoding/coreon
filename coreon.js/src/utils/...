@@ -1,0 +1,118 @@
+// Utility functions for DOM manipulation
+
+/**
+ * Adds a class to an element.
+ * @param {Element} element - The DOM element.
+ * @param {string} className - The class name to add.
+ */
+export function addClass(element, className) {
+    if (element && className) {
+        element.classList.add(className);
+    }
+}
+
+/**
+ * Removes a class from an element.
+ * @param {Element} element - The DOM element.
+ * @param {string} className - The class name to remove.
+ */
+export function removeClass(element, className) {
+    if (element && className) {
+        element.classList.remove(className);
+    }
+}
+
+/**
+ * Toggles a class on an element.
+ * @param {Element} element - The DOM element.
+ * @param {string} className - The class name to toggle.
+ */
+export function toggleClass(element, className) {
+    if (element && className) {
+        element.classList.toggle(className);
+    }
+}
+
+/**
+ * Sets an attribute on an element.
+ * @param {Element} element - The DOM element.
+ * @param {string} attribute - The attribute name.
+ * @param {string} value - The attribute value.
+ */
+export function setAttribute(element, attribute, value) {
+    if (element && attribute) {
+        element.setAttribute(attribute, value);
+    }
+}
+
+/**
+ * Gets an attribute from an element.
+ * @param {Element} element - The DOM element.
+ * @param {string} attribute - The attribute name.
+ * @returns {string|null} - The attribute value or null if not found.
+ */
+export function getAttribute(element, attribute) {
+    return element ? element.getAttribute(attribute) : null;
+}
+
+/**
+ * Removes an attribute from an element.
+ * @param {Element} element - The DOM element.
+ * @param {string} attribute - The attribute name.
+ */
+export function removeAttribute(element, attribute) {
+    if (element && attribute) {
+        element.removeAttribute(attribute);
+    }
+}
+
+/**
+ * Creates a new element.
+ * @param {string} tagName - The name of the element to create.
+ * @returns {Element} - The newly created element.
+ */
+export function createElement(tagName) {
+    return document.createElement(tagName);
+}
+
+/**
+ * Appends a child element to a parent element.
+ * @param {Element} parent - The parent element.
+ * @param {Element} child - The child element to append.
+ */
+export function appendChild(parent, child) {
+    if (parent && child) {
+        parent.appendChild(child);
+    }
+}
+
+/**
+ * Removes a child element from a parent element.
+ * @param {Element} parent - The parent element.
+ * @param {Element} child - The child element to remove.
+ */
+export function removeChild(parent, child) {
+    if (parent && child) {
+        parent.removeChild(child);
+    }
+}
+
+/**
+ * Sets the inner HTML of an element.
+ * @param {Element} element - The DOM element.
+ * @param {string} html - The HTML string to set.
+ */
+export function setInnerHTML(element, html) {
+    if (element) {
+        element.innerHTML = html;
+    }
+}
+
+/**
+ * Gets the inner HTML of an element.
+ * @param {Element} element - The DOM element.
+ * @returns {string} - The inner HTML of the element.
+ */
+export function getInnerHTML(element) {
+    return element ? element.innerHTML : '';
+}

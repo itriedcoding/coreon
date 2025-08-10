@@ -1,0 +1,37 @@
+{
+  "name": "coreon",
+  "version": "1.0.0",
+  "description": "Coreon.js is an advanced JavaScript framework for building modern web applications with a focus on modularity and reusability.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --config webpack.config.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/coreon.git"
+  },
+  "keywords": [
+    "javascript",
+    "framework",
+    "web",
+    "modular",
+    "reusable"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.0",
+    "webpack": "^5.0.0",
+    "babel-loader": "^8.1.0"
+  },
+  "homepage": "https://github.com/yourusername/coreon#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/coreon/issues"
+  }
+}
