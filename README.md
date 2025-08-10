@@ -115,4 +115,4 @@ Contributions are welcome! Please submit a pull request or open an issue for any
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 ## To use 
-``"run" npm i @honeyjsadmin/coreon``
+`` npm i @honeyjsadmin/coreon``
