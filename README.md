@@ -1,3 +1,4 @@
+
 # Coreon.js
 
 Coreon.js is an advanced JavaScript framework designed for building modern web applications. It provides a robust set of features, including state management, routing, component lifecycle management, and more. This README will guide you through the installation, usage, and key concepts of the framework.
@@ -113,3 +114,5 @@ Contributions are welcome! Please submit a pull request or open an issue for any
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
+## To use 
+``"run" npm i @honeyjsadmin/coreon``
